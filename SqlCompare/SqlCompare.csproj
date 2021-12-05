@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69298568-2D46-436C-B663-94F8AA837599}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SqlCompare</RootNamespace>
+    <AssemblyName>SqlCompare</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabStrip, Version=2.0.2523.29272, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ddl\TabStrip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FrmCompare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCompare.Designer.cs">
+      <DependentUpon>FrmCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmExecute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmExecute.Designer.cs">
+      <DependentUpon>FrmExecute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmGenerateSql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGenerateSql.Designer.cs">
+      <DependentUpon>FrmGenerateSql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSupportSql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWaiting3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWaiting3.Designer.cs">
+      <DependentUpon>FrmWaiting3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitWndFun.cs" />
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmCompare.resx">
+      <DependentUpon>FrmCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmExecute.resx">
+      <DependentUpon>FrmExecute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGenerateSql.resx">
+      <DependentUpon>FrmGenerateSql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSupportSql.resx">
+      <DependentUpon>FrmSupportSql.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWaiting3.resx">
+      <DependentUpon>FrmWaiting3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Config\Base.csproj">
+      <Project>{d2203a4a-8051-46d2-be83-a18dea217136}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiffPlex\DiffPlex.csproj">
+      <Project>{2dc6ba5a-64f6-43b0-99f8-26a77222e2a7}</Project>
+      <Name>DiffPlex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastColoredTextBox\FastColoredTextBox.csproj">
+      <Project>{6dd14a85-ccfc-4774-bd26-0f5772512319}</Project>
+      <Name>FastColoredTextBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoorMansTSqlFormatterLib\PoorMansTSqlFormatterLib.csproj">
+      <Project>{adbdfdca-cab6-4569-9151-0bd42e65b400}</Project>
+      <Name>PoorMansTSqlFormatterLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+    <None Include="Resources\unsure.gif" />
+    <None Include="Resources\undo_16x16.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\sync.png" />
+    <None Include="Resources\Sort_ZA.png" />
+    <None Include="Resources\smile_16x16.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\sad_16x16.png" />
+    <None Include="Resources\rolleyes.gif" />
+    <None Include="Resources\Rename.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\redo_16x16.png" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\property.png" />
+    <None Include="Resources\Play.png" />
+    <None Include="Resources\lol.gif" />
+    <None Include="Resources\loading2.gif" />
+    <None Include="Resources\lightning.png" />
+    <None Include="Resources\layer--plus.png" />
+    <None Include="Resources\layer--minus.png" />
+    <None Include="Resources\ico_expand.ico" />
+    <None Include="Resources\HostStatus_On.png" />
+    <None Include="Resources\HostStatus_Off.png" />
+    <None Include="Resources\HostStatus_Check.png" />
+    <None Include="Resources\forward_16x16.png" />
+    <None Include="Resources\folder-add-icon.png" />
+    <None Include="Resources\Folder_Add.png" />
+    <None Include="Resources\Folder.ico.png" />
+    <None Include="Resources\Expand.png" />
+    <None Include="Resources\edit-padding-top.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\data-add-icon.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Connection_Add.png" />
+    <None Include="Resources\Collapse.png" />
+    <None Include="Resources\class_libraries.png" />
+    <None Include="Resources\bye.gif" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\bookmark--plus.png" />
+    <None Include="Resources\beyond-compare.png" />
+    <None Include="Resources\backward0_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
